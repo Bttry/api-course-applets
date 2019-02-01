@@ -1,0 +1,40 @@
+{
+  "name": "api-course-applets",
+  "version": "0.0.1",
+  "description": "课程小程序（api接口）",
+  "main": "app.js",
+  "scripts": {
+    "generateNginx": "node ./script/nginx.js",
+    "dev": "nodemon bin/app.js",
+    "start": "cross-env NODE_ENV=production node bin/app.js",
+    "online": "npm run generateNginx && pm2 reload script/ecosystem.config.js --env production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bttry/course-applets-oldIsland.git"
+  },
+  "author": "StriveNuby",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bttry/api-course-applets/issues"
+  },
+  "homepage": "https://github.com/Bttry/api-course-applets#readme",
+  "dependencies": {
+    "koa": "^2.5.3",
+    "koa-bodyparser": "^4.2.1",
+    "koa-compose": "^4.1.0",
+    "koa-logger": "^3.2.0",
+    "koa-multer": "^1.0.2",
+    "koa-onerror": "^4.1.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "moment": "^2.24.0",
+    "mongoose": "^5.3.6"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "cross-env": "^5.2.0",
+    "nodemon": "^1.18.4",
+    "require-dir": "^1.2.0"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "app": {
+    "name": "api-course-applets",
+    "POST": 8877,
+    "NGPOST": 8878,
+    "HOST": "127.0.0.1"
+  },
+  "mongodb": {
+    "name": "courseApplets",
+    "port": "27017",
+    "host": "127.0.0.1",
+    "username": "",
+    "password": "",
+    "options": {
+      "auto_reconnect": true,
+      "useNewUrlParser": true,
+      "poolSize": 10
+    }
+  },
+  "nginx": {
+    "serverName": "",
+    "road": "/usr/local/nginx/conf.d",
+    "sbin": "/usr/local/nginx/sbin/nginx",
+    "sslPath": "/usr/local/nginx/ssl",
+    "key": "",
+    "cat": ""
+  },
+  "pm2": {
+    "entry": "api-course-applets"
+  }
+}
