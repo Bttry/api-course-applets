@@ -15,7 +15,9 @@ const model = MAPP.injectDBModel(
     // 期刊题目
     title: { type: String, default: '' },
     // 期刊类型，这里的类型分为：100 电影 200 音乐 300 句子
-    type: { type: Number }
+    type: { type: Number },
+    // url地址
+    url: { type: String, default: '' }
   },
   'periodical'
 )
