@@ -67,6 +67,27 @@ module.exports = MAPP.injectRouter(
           })
         }
       })
+      // 获取当前期刊的下一期
+      .get('/classic/:category/:artID/favor', async ctx => {
+        try {
+          let { category, artID } = ctx.params
+          let result = await MAPP.db_getOne({
+            model: 'periodical',
+            condition: { _id: artID, type: category },
+            filters: { fav_nums: 1, like_status: 1 }
+          })
+          ctx.body = MAPP.info({
+            code: 200,
+            message: '查询成功',
+            data: result
+          })
+        } catch (err) {
+          ctx.body = MAPP.info({
+            code: 500,
+            irregularInfo: err
+          })
+        }
+      })
       // 点赞
       .post('/like', async ctx => {
         try {
